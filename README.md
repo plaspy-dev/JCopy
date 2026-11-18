@@ -89,6 +89,16 @@ Use [GitHub Issues](https://github.com/plaspy-dev/JCopy/issues) for questions ab
 
 The five recovered project files are dated 12 September 2004. Their timestamps have no time zone, so the reconstructed author date uses 12:00 UTC. The first commit also carries the solution, converted C++ project, README, Git ignore rules and MIT license added during the 2026 reconstruction.
 
+### Verification
+
+Tested on 18 November 2026 on Windows 11 Pro (10.0.26300). MSBuild 18.10.1.42706 built `jcopy.sln` for Win32 in Release and Debug in separate copies of the two commits. Both used Visual Studio Community 18.10.3, the v145 toolset and the Windows SDK versions listed above.
+
+In both builds, running JCopy with no arguments printed the expected usage line. With the three arguments from **Usage**, JCopy replaced the disposable destination and started the demo. `fc /b` confirmed that the new destination matched the reference byte for byte. The source file disappeared and the launched demo wrote `JCopy demo started` to `started.txt`.
+
+![Console showing the JCopy command, a binary match, and the launch marker](docs/media/jcopy-replacement-console.png)
+
+The capture uses Release and shows actual console output rendered with Python 3.12.4 and Pillow 12.2.0.
+
 ### License
 
 [MIT License](LICENSE).
@@ -181,6 +191,16 @@ Usa las [incidencias de GitHub](https://github.com/plaspy-dev/JCopy/issues) para
 ### Historia
 
 Los cinco archivos recuperados del proyecto tienen fecha del 12 de septiembre de 2004. Las marcas de tiempo carecen de zona horaria, por lo que la fecha de autor reconstruida usa las 12:00 UTC. El primer commit también contiene la solución, el proyecto de C++ convertido, el README, las reglas de exclusión de Git y la licencia MIT que se añadieron durante la reconstrucción de 2026.
+
+### Verificación
+
+Prueba realizada el 18 de noviembre de 2026 en Windows 11 Pro (10.0.26300). MSBuild 18.10.1.42706 compiló `jcopy.sln` para Win32 en Release y Debug en copias separadas de los dos commits. Ambas usaron Visual Studio Community 18.10.3, el conjunto v145 y la versión del SDK de Windows indicados arriba.
+
+En las dos configuraciones, JCopy mostró la línea de uso esperada al ejecutarlo sin argumentos. Con los tres argumentos de **Uso**, JCopy reemplazó el destino desechable e inició la demostración. `fc /b` confirmó que el destino nuevo coincidía con la referencia byte por byte. El archivo de origen desapareció y la demostración iniciada escribió `JCopy demo started` en `started.txt`.
+
+![Consola con el comando de JCopy, la comparación de archivos y la confirmación de inicio](docs/media/jcopy-replacement-console.png)
+
+La captura usa Release y muestra la salida real de la consola, reproducida con Python 3.12.4 y Pillow 12.2.0.
 
 ### Licencia
 
